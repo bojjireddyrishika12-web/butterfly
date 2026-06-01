@@ -1,20 +1,9 @@
 <!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
+Please keep the formatting and headers as they are needed for the website generator.
+--->
 
 ## How it works
-
-Explain how your project works
+This project implements a hardware-accelerated Cooley-Tukey Number Theoretic Transform (NTT) Butterfly Core optimized for CRYSTALS-Kyber post-quantum cryptography ($q = 3329$). It performs fast modular addition and subtraction arithmetic arrays using specialized combinational subtraction matrix logic blocks without slow division operations.
 
 ## How to test
-
-Explain how to use your project
-
-## External hardware
-
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+Provide input arrays for $A\_in$ on the primary input bus, and seed values for $B\_in$ and twiddle factors $W\_in$ on the split bidirectional bus lines. Drive clock transitions to observe calculated modular transformation bounds on $X\_out$ and $Y\_out$.
