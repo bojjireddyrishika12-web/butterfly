@@ -1,7 +1,19 @@
+# Tiny Tapeout Project Information
+# See https://tinytapeout.com/digital_design/config/ for details
+
+yaml_version: [6]
+
 project:
   title:        "PQC NTT Butterfly Core"
+  author:       "Aishwarya Gadela & Bojji Reddy Rishika"
   description:  "Hardware-accelerated Cooley-Tukey NTT Butterfly processing block for PQC Kyber"
-  input_pins:
+  language:     "Verilog"
+  clock_hz:     10000000       # 10 MHz
+  tiles:        "1x1"          # Design Footprint
+
+pinout:
+  # Input pins [0-7]
+  ui_in:
     - "A_in[0]"
     - "A_in[1]"
     - "A_in[2]"
@@ -10,7 +22,9 @@ project:
     - "A_in[5]"
     - "A_in[6]"
     - "A_in[7]"
-  output_pins:
+
+  # Output pins [0-7]
+  uo_out:
     - "X_out[0]"
     - "X_out[1]"
     - "X_out[2]"
@@ -19,7 +33,9 @@ project:
     - "X_out[5]"
     - "X_out[6]"
     - "X_out[7]"
-  bidirectional_pins:
+
+  # Bidirectional pins [0-7]
+  uio_in:
     - "B_in[0]"
     - "B_in[1]"
     - "B_in[2]"
@@ -29,4 +45,25 @@ project:
     - "Y_out[6]"
     - "Y_out[7]"
 
-  顶层模块/top_module: "tt_um_pqc_ntt_butterfly"
+  uio_out:
+    - "unused"
+    - "unused"
+    - "unused"
+    - "unused"
+    - "Y_out[4]"
+    - "Y_out[5]"
+    - "Y_out[6]"
+    - "Y_out[7]"
+
+  uio_oe:
+    - "unused"
+    - "unused"
+    - "unused"
+    - "unused"
+    - "output"
+    - "output"
+    - "output"
+    - "output"
+
+# Do not change!
+top_module: "tt_um_pqc_ntt_butterfly"
