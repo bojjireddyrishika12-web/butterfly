@@ -1,4 +1,4 @@
-yaml_version: [6]
+yaml_version: 6
 
 project:
   title:        "PQC NTT Butterfly Core"
